@@ -45,6 +45,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Base
             public void done(List<ParseObject> scoreList, ParseException e) {
                 if (e == null) {
                     Log.d("score", "Retrieved " + scoreList.size() + " scores");
+                    for (ParseObject score : scoreList) {
+                        // This does not require a network access.
+                        Log.d("viral", "retrieved a row "+ score.get("Shop_name"));
+
+                    }
                 } else {
                     Log.d("score", "Error: " + e.getMessage());
                 }
