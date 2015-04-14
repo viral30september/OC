@@ -1,10 +1,5 @@
 package com.example.arjun.oc;
 
-import com.example.arjun.oc.adapter.NavDrawerListAdapter;
-import com.example.arjun.oc.model.NavDrawerItem;
-
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -19,6 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.arjun.oc.adapter.NavDrawerListAdapter;
+import com.example.arjun.oc.model.NavDrawerItem;
+
+import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     private DrawerLayout mDrawerLayout;

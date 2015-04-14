@@ -1,24 +1,37 @@
 package com.example.arjun.oc;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.parse.Parse;
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.parse.FindCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.HashMap;
+import java.util.List;
 
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.view.CardViewNative;
 
-public class HomeFragment extends Fragment implements View.OnClickListener{
+public class HomeFragment extends Fragment implements View.OnClickListener, BaseSliderView.OnSliderClickListener{
 
+    private SliderLayout mDemoSlider;
     Intent intent = null;
 	public HomeFragment(){}
 	
@@ -27,6 +40,56 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             Bundle savedInstanceState) {
  
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        Log.v("Viral", "Viral in home fragment");
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Advertisement");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> scoreList, ParseException e) {
+                if (e == null) {
+                    Log.d("score", "Retrieved " + scoreList.size() + " scores");
+                } else {
+                    Log.d("score", "Error: " + e.getMessage());
+                }
+            }
+        });
+        ParseObject testObject = new ParseObject("AbcObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
+
+        mDemoSlider = (SliderLayout)rootView.findViewById(R.id.slider);
+
+        HashMap<String,String> url_maps = new HashMap<String, String>();
+        url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
+        url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
+        url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
+        url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
+
+        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
+        file_maps.put("Hannibal",R.drawable.hannibal);
+        file_maps.put("Big Bang Theory",R.drawable.bigbang);
+        file_maps.put("House of Cards",R.drawable.house);
+        file_maps.put("Game of Thrones", R.drawable.game_of_thrones);
+
+        for(String name : file_maps.keySet()){
+            TextSliderView textSliderView = new TextSliderView(getActivity());
+            // initialize a SliderLayout
+            textSliderView
+                    .description(name)
+                    .image(file_maps.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
+
+            //add your extra information
+            textSliderView.getBundle()
+                    .putString("extra",name);
+
+            mDemoSlider.addSlider(textSliderView);
+        }
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
+        mDemoSlider.setDuration(4000);
 
         // Enable Local Datastore.
 /*        Parse.enableLocalDatastore(this);
@@ -38,15 +101,18 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
         //Create a Card
         Card card = new Card(getActivity(), R.layout.carddemo_example_inner_content);
-
-        //Set the card inner text
-        card.setTitle("Title");
+        Card card1 = new CustomCard(getActivity());
 
         //Create a CardHeader
         CardHeader header = new CardHeader(getActivity());
+        CardHeader header1 = new CardHeader(getActivity());
 
         //Add Header to card
         card.addCardHeader(header);
+        card1.addCardHeader(header1);
+
+        //Set the card inner text
+        card1.setTitle("Title");
 
         //Set card in the cardView
         CardViewNative cardView0 = (CardViewNative) rootView.findViewById(R.id.carddemo0);
@@ -201,5 +267,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 this.startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    public void onSliderClick(BaseSliderView baseSliderView) {
+
     }
 }

@@ -3,10 +3,7 @@
     xmlns:card="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:layout_margin="@dimen/fragment_margin">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -18,7 +15,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="160dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What's Hot"
+                android:textSize="20dp" />
+
             <HorizontalScrollView
+                android:id="@+id/horizontalScrollView0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -29,77 +38,67 @@
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo0"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Biggest Discount"
+                android:textSize="20dp" />
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"
@@ -112,77 +111,67 @@
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo11"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo21"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo31"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo41"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo51"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo61"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo71"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Near by your location"
+                android:textSize="20dp" />
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"
@@ -195,77 +184,67 @@
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo12"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo22"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo32"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo42"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo52"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo62"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo72"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deals of the Day"
+                android:textSize="20dp" />
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"
@@ -278,77 +257,67 @@
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo03"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo13"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo23"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo33"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo43"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo53"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo63"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo73"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Recently Viewed"
+                android:textSize="20dp" />
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"
@@ -361,79 +330,63 @@
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo04"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo14"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo24"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo34"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo44"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo54"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo64"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
 
                     <it.gmariotti.cardslib.library.view.CardViewNative
                         android:id="@+id/carddemo74"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
-                        android:layout_marginTop="12dp"
-                        card:card_layout_resourceID="@layout/native_card_thumbnail_layout" />
+                        android:layout_width="@dimen/card_width"
+                        android:layout_height="@dimen/card_height"
+                        android:layout_margin="@dimen/card_margin"
+                        card:card_layout_resourceID="@layout/carddemo_example_inner_content" />
                 </LinearLayout>
             </HorizontalScrollView>
         </LinearLayout>
     </ScrollView>
-    
+
 
 </RelativeLayout>
