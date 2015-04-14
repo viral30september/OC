@@ -4,14 +4,20 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
 import com.parse.Parse;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.List;
 
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardHeader;
@@ -35,7 +41,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
         testObject.saveInBackground(); */
+        Log.v("Viral", "Viral in home fragment");
 
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Advertisement");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> scoreList, ParseException e) {
+                if (e == null) {
+                    Log.d("score", "Retrieved " + scoreList.size() + " scores");
+                } else {
+                    Log.d("score", "Error: " + e.getMessage());
+                }
+            }
+        });
+        ParseObject testObject = new ParseObject("AbcObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
         //Create a Card
         Card card = new Card(getActivity(), R.layout.carddemo_example_inner_content);
 
