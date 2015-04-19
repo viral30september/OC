@@ -3,6 +3,7 @@ package com.example.arjun.oc;
 /**
  * Created by Arjun on 4/14/2015.
  */
+
 import android.app.Application;
 import android.util.Log;
 
@@ -22,7 +23,8 @@ public class MyApplication extends Application {
 
         Parse.enableLocalDatastore(this);
         Log.v("Viral", "Viral in application");
-        Parse.initialize(this, "G2hRq7lVUKPXtQqOTotEjcMrKkNCdZhfMddGNcLC", "l3SDkDNVMN75S7b9Ou4GDYbiv8kckUbS2RW0lh6O");        ParseUser.enableAutomaticUser();
+        Parse.initialize(this, "G2hRq7lVUKPXtQqOTotEjcMrKkNCdZhfMddGNcLC", "l3SDkDNVMN75S7b9Ou4GDYbiv8kckUbS2RW0lh6O");
+        ParseUser.enableAutomaticUser();
         ParseACL defaultACL = new ParseACL();
         ParseACL.setDefaultACL(defaultACL, true);
         ParsePush.subscribeInBackground("", new SaveCallback() {
