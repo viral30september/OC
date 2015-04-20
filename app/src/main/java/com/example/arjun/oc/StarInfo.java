@@ -10,32 +10,25 @@ import android.widget.TextView;
  */
 public class StarInfo extends Activity {
 
-    String name;
+    String brandName;
+    int position;
 
+    ImageView imageView;
+    TextView textView, textInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starinfo);
 
+        imageView = (ImageView) findViewById(R.id.imageView);
+        textView = (TextView) findViewById(R.id.textView);
+        textInfo = (TextView) findViewById(R.id.textInfo);
+
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            name = extras.getString("name");
-        }
-
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
-        TextView textView = (TextView) findViewById(R.id.textView);
-        TextView textInfo = (TextView) findViewById(R.id.textInfo);
-        textView.setText(name);
-
-        switch (name){
-            case "Nike":
-                imageView.setImageResource(R.drawable.nike);
-                textInfo.setText("Welcome to Nike. We have upto 50% discount on all products.");
-                break;
-            case "Reebok":
-                imageView.setImageResource(R.drawable.reebok);
-                textInfo.setText("Welcome to Reebok. We have upto 40% discount on all products.");
-                break;
+            brandName = extras.getString("brandName");
+            position = extras.getInt("position");
         }
     }
+
 }

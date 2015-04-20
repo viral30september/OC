@@ -1,6 +1,7 @@
 package com.example.arjun.oc.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.arjun.oc.R;
+import com.example.arjun.oc.StarInfo;
 import com.example.arjun.oc.model.BrandCardData;
 import com.squareup.picasso.Picasso;
 
@@ -36,10 +38,17 @@ public class RecyclerViewCardAdapter extends RecyclerView.Adapter<RecyclerViewCa
     public ViewHolder onCreateViewHolder(ViewGroup parent,
                                          int viewType) {
         // create a new view
-        View v = LayoutInflater.from(parent.getContext())
+        final View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_view_detail, parent, false);
         // set the view's size, margins, paddings and layout parameters
-        ViewHolder vh = new ViewHolder(v);
+        ViewHolder vh = new ViewHolder(v, new ViewHolder.IMyViewHolderClicks() {
+            public void startMyActivity(View caller, int position, String brandName) {
+                Intent intent = new Intent(v.getContext(), StarInfo.class);
+                intent.putExtra("position", position);
+                intent.putExtra("brandName", brandName);
+                v.getContext().startActivity(intent);
+            }
+        });
         return vh;
     }
 
@@ -68,20 +77,33 @@ public class RecyclerViewCardAdapter extends RecyclerView.Adapter<RecyclerViewCa
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case
 
         public CardView mCardView;
         public TextView mBrandName, mBrandDiscount;
         public ImageView mBrandImage;
+        public IMyViewHolderClicks mListener;
 
-        public ViewHolder(View v) {
+        public ViewHolder(View v, IMyViewHolderClicks listener) {
             super(v);
+            mListener = listener;
             mCardView = (CardView) v.findViewById(R.id.card_view);
             mBrandName = (TextView) mCardView.findViewById(R.id.brandName);
             mBrandDiscount = (TextView) mCardView.findViewById(R.id.brandDiscount);
             mBrandImage = (ImageView) mCardView.findViewById(R.id.brandImage);
+            mCardView.setOnClickListener(this);
+            v.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            mListener.startMyActivity((CardView) v, getPosition(), mBrandName.getText().toString());
+        }
+
+        public static interface IMyViewHolderClicks {
+            public void startMyActivity(View caller, int position, String brandName);
         }
     }
+
 }

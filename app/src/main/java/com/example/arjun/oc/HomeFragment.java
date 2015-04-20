@@ -7,6 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -28,8 +30,9 @@ import java.util.List;
 public class HomeFragment extends Fragment implements BaseSliderView.OnSliderClickListener {
 
     private static final String TAG = "HomeFragment";
-    private List<BrandCardData> brandCardDatas = new ArrayList<BrandCardData>();
-
+    public List<BrandCardData> brandCardDatas = new ArrayList<BrandCardData>();
+    Menu menu;
+    MenuItem menuDoneItem;
     private SliderLayout mDemoSlider;
     private RecyclerView mRecyclerView, mRecyclerView1;
     private RecyclerView.Adapter mAdapter, mAdapter1;
@@ -53,8 +56,8 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         mLayoutManager1 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView1.setLayoutManager(mLayoutManager1);
-        new AsyncParseTask().execute();
 
+        new AsyncParseTask().execute();
 
         mDemoSlider = (SliderLayout) rootView.findViewById(R.id.slider);
 
@@ -126,10 +129,6 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
                     Log.d("viral", "retrieved a row " + score.get("Shop_name"));
                 }
             }
-            for (ParseObject score : list) {
-                // This does not require a network access.
-                Log.d("viral", "retrieved a row " + score.get("Shop_name"));
-            }
             return result; //"Failed to fetch data!";
         }
 
@@ -147,4 +146,5 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
             }
         }
     }
+
 }
