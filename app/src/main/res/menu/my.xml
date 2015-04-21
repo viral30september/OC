@@ -6,5 +6,6 @@
         android:icon="@drawable/section_search"
         android:orderInCategory="100"
         android:showAsAction="always"
-        android:title="Search" />
+        android:title="Search"
+        tools:ignore="AppCompatResource" />
 </menu>
