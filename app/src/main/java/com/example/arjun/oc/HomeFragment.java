@@ -1,6 +1,7 @@
 package com.example.arjun.oc;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
@@ -37,6 +39,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
     private RecyclerView mRecyclerView, mRecyclerView1;
     private RecyclerView.Adapter mAdapter, mAdapter1;
     private RecyclerView.LayoutManager mLayoutManager, mLayoutManager1;
+    private TextView hot_more;
 
     public HomeFragment() {
     }
@@ -58,7 +61,14 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         mRecyclerView1.setLayoutManager(mLayoutManager1);
 
         new AsyncParseTask().execute();
-
+        hot_more = (TextView)rootView.findViewById(R.id.hot_more);
+        hot_more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TabActivity.class);
+                startActivity(intent);
+            }
+        });
         mDemoSlider = (SliderLayout) rootView.findViewById(R.id.slider);
 
         HashMap<String, String> url_maps = new HashMap<String, String>();

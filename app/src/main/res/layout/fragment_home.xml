@@ -18,13 +18,23 @@
                 android:id="@+id/slider"
                 android:layout_width="match_parent"
                 android:layout_height="160dp" />
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="What's Hot"
                 android:textSize="20dp" />
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More"
+        android:id="@+id/hot_more"
+        android:textSize="20dp"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view_first"
                 android:layout_width="wrap_content"
