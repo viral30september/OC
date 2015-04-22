@@ -5,5 +5,5 @@
     <dimen name="card_width">160dp</dimen>
     <dimen name="card_height">200dp</dimen>
     <dimen name="card_margin">3dp</dimen>
-    <dimen name="fragment_margin">3dp</dimen>
+    <dimen name="fragment_margin">2dp</dimen>
 </resources>

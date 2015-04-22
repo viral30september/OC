@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
     private RecyclerView mRecyclerView, mRecyclerView1;
     private RecyclerView.Adapter mAdapter, mAdapter1;
     private RecyclerView.LayoutManager mLayoutManager, mLayoutManager1;
-    private TextView hot_more;
+    private TextView mHotMore, mBigDiscMore, mDealMore, mNearMore, mRecentMore;
 
     public HomeFragment() {
     }
@@ -55,21 +55,20 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_first);
         mRecyclerView1 = (RecyclerView) rootView.findViewById(R.id.recycler_view_second);
 
+        mDemoSlider = (SliderLayout) rootView.findViewById(R.id.slider);
+
+        mHotMore = (TextView) rootView.findViewById(R.id.hot_more);
+        mBigDiscMore = (TextView) rootView.findViewById(R.id.big_disc_more);
+        mDealMore = (TextView) rootView.findViewById(R.id.deals_more);
+        mNearMore = (TextView) rootView.findViewById(R.id.near_more);
+        mRecentMore = (TextView) rootView.findViewById(R.id.recent_more);
+
         mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         mLayoutManager1 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView1.setLayoutManager(mLayoutManager1);
 
         new AsyncParseTask().execute();
-        hot_more = (TextView)rootView.findViewById(R.id.hot_more);
-        hot_more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TabActivity.class);
-                startActivity(intent);
-            }
-        });
-        mDemoSlider = (SliderLayout) rootView.findViewById(R.id.slider);
 
         HashMap<String, String> url_maps = new HashMap<String, String>();
         url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
@@ -102,6 +101,46 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
         mDemoSlider.setDuration(4000);
+
+        mHotMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mBigDiscMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mDealMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mNearMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mRecentMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TabActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }
@@ -156,5 +195,4 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
             }
         }
     }
-
 }

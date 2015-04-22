@@ -1,4 +1,5 @@
 package com.example.arjun.oc;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,7 +13,7 @@ import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
 
 
-public class TabActivity extends ActionBarActivity implements MaterialTabListener{
+public class TabActivity extends ActionBarActivity implements MaterialTabListener {
 
     MaterialTabHost tabHost;
     ViewPager pager;
@@ -27,7 +28,7 @@ public class TabActivity extends ActionBarActivity implements MaterialTabListene
         this.setSupportActionBar(toolbar);
 
         tabHost = (MaterialTabHost) this.findViewById(R.id.tabHost);
-        pager = (ViewPager) this.findViewById(R.id.pager );
+        pager = (ViewPager) this.findViewById(R.id.pager);
 
         // init view pager
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -82,35 +83,24 @@ public class TabActivity extends ActionBarActivity implements MaterialTabListene
 
         @Override
         public int getCount() {
-            return 6;
+            return 5;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "New";
-                case 1:
                     return "What's hot";
-
+                case 1:
+                    return "Biggest Discount";
                 case 2:
-                    return "Nearest";
-
+                    return "Deals of the Day";
                 case 3:
-                    return "Most discount";
-
+                    return "Nearest Location";
                 case 4:
-                    return "DOTD";
-
-                case 5:
-                    return "Favourites";
-
-
+                    return "Recent search";
                 default:
-
                     break;
-
-
             }
             return "Sezione " + position;
         }

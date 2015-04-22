@@ -17,60 +17,137 @@
             <com.daimajia.slider.library.SliderLayout
                 android:id="@+id/slider"
                 android:layout_width="match_parent"
-                android:layout_height="160dp" />
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
+                android:layout_height="170dp"
+                android:layout_marginBottom="5dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="What's Hot"
-                android:textSize="20dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="More"
-        android:id="@+id/hot_more"
-        android:textSize="20dp"
-        android:layout_alignParentRight="true"/>
-</RelativeLayout>
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What's Hot"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/hot_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="#00bfff"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="More"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view_first"
                 android:layout_width="wrap_content"
                 android:layout_height="220dp"
                 android:scrollbars="vertical" />
 
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Biggest Discount"
-                android:textSize="20dp" />
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Biggest Discount"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/big_disc_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="#00bfff"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="More"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view_second"
                 android:layout_width="wrap_content"
                 android:layout_height="220dp"
-                android:layout_below="@id/recycler_view_first"
                 android:scrollbars="vertical" />
 
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Near by your location"
-                android:textSize="20dp" />
+                android:layout_margin="5dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Deals of the Day"
-                android:textSize="20dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Deals of the Day"
+                    android:textSize="20dp" />
 
-            <TextView
+                <TextView
+                    android:id="@+id/deals_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="#00bfff"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="More"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Recently Viewed"
-                android:textSize="20dp" />
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nearest Location"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/near_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="#00bfff"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="More"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your recent search"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/recent_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="#00bfff"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="More"
+                    android:textSize="20dp" />
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>
